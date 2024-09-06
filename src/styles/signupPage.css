@@ -1,0 +1,101 @@
+/* src/styles/signupPage.css */
+.signup-page {
+  width: 375px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: solid 2px black;
+}
+
+.snav {
+  display: flex;
+  align-items: center; 
+  gap: 3rem; 
+}
+
+.snav h2 {
+  margin: 0; 
+  font-size: 18px; 
+  color: #333;
+}
+
+hr {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #000;
+}
+
+.signup-form {
+  width: 89%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+img {
+  width: 200px; /* updated to match the width in your component */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #000000;
+}
+
+select {
+  display: inline-block;
+  width: 97%; /* adjust the width as needed */
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+p {
+  margin-top: -0.1rem;
+  font-size: 11px;
+  color: #000000;
+  text-decoration: underline;
+}
+
+p > a {
+  color: #1256d4;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #F3F3F3;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
