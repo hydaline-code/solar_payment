@@ -16,8 +16,8 @@ const LoginPage = () => {
 
   return (
     <div className="login-page">
-      <h1>Get Energy Easier</h1>
-      <hr />
+        <h1>Get Energy Easier</h1>
+        <hr />
       <img src={loginImage} alt="loginimgage" />
       <form onSubmit={handleLogin} className="login-form">
         <div className="form-group">
