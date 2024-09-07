@@ -45,9 +45,11 @@ const LoginPage = () => {
             </Link>
           </p>
         </div>
+        <Link to="/HomePage">
         <button type="submit" className="login-button">
           Login
         </button>
+        </Link>
         <p className='login-para'>
           Don't have an account?
           {' '}

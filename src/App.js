@@ -4,6 +4,7 @@ import LoginPage from './screens/LoginPage';
 import SignupPage from './screens/signUpPage';
 import SignupConfirm from './screens/SignupConfirm';
 import SignupError from './screens/SigninErr';
+import HomePage from './screens/HomePage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/SignupConfirm" element={<SignupConfirm />} />
         <Route path="/SignupError" element={<SignupError />} />
+        <Route path="/HomePage" element={<HomePage/>}/>
       </Routes>
     </Router>
   );
