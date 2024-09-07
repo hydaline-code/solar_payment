@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { BiUser , BiTrendingUp} from "react-icons/bi";
 import loginImage from '../assets/loginbg.png';
 import '../styles/HomePage.css';
+import HomeCharts from '../components/HomeCharts';
+import PieChart from "../components/PieChart";
+import {overallData, transactionsData, activeUsersData} from  '../data/ChartData';
 
 const HomePage = ()=>{
   return (
@@ -43,34 +46,21 @@ const HomePage = ()=>{
 
       {/* Overall Statistics Graph Section */}
       <section className="overall-stats">
-        <h2>Overall - Statistics</h2>
-        {/* Placeholder for the graph */}
         <div className="graph-placeholder">
-          <p>Graph will be here</p>
+          <HomeCharts  title="Overall - Statistics" chartData={overallData} />
         </div>
       </section>
-<div className="trans-user">
       <section className="transactions">
-      <h2>Transactions</h2>
         <div className="transaction-graph-placeholder">
-          <p>Transaction Graph Placeholder</p>
+        <HomeCharts  title="Overall - Statistics" chartData={transactionsData} />
         </div> 
       </section>
 
       <section className="active-users">
         <h2>Active Users</h2>
-        <div className="user-statistics">
-          <div className="user-count">
-            <span>25 Users</span>
-          </div>
-          <div className="user-periods">
-            <p>Daily</p>
-            <p>Weekly</p>
-            <p>Monthly</p>
-          </div>
-        </div>
+        <PieChart chartData={activeUsersData} />
       </section>
-      </div>
+    
     </div>
   );
 };

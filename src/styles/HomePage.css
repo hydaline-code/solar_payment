@@ -100,11 +100,6 @@
   margin-top: 5px;
 }
 
-.trans-user {
-  display: flex;
-  flex-direction: row;
-  border: solid 1px black;
-}
 /* Transactions Section */
 .transactions {
   margin: 20px auto;
