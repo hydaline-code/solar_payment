@@ -17,12 +17,13 @@ const HomePage = ()=>{
         <h1>Welcome to AER</h1>
         <div className="user-role">
         <BiUser size={44} color="black" />
+        <p className="user-name">Admin</p>
         </div>
     </header>
     <h2>Get Energy Easier</h2>
-    <hr />
     <section className="intro-section">
         <img src={loginImage} alt="Login background" />
+
         <button className="get-started-btn">Get Started</button>
       </section>
 
@@ -57,8 +58,11 @@ const HomePage = ()=>{
       </section>
 
       <section className="active-users">
-        <h2>Active Users</h2>
+      
+      <div className="graph-placeholder-1">
+      <h2>Active Users</h2>
         <PieChart chartData={activeUsersData} />
+        </div>
       </section>
     
     </div>
