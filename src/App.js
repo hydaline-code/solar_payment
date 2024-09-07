@@ -12,8 +12,8 @@ function App() {
         {/* Define routes for each page */}
         <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-       < Route path="/SignupConfirm" element={<SignupConfirm/>} />
-       <Route path="/SignupError" element={<SignupError/>}/>
+        <Route path="/SignupConfirm" element={<SignupConfirm />} />
+        <Route path="/SignupError" element={<SignupError />} />
       </Routes>
     </Router>
   );

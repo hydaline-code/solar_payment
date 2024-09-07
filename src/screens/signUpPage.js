@@ -1,10 +1,9 @@
 // src/screens/SignupPage.js
 import React, { useState } from 'react';
 import '../styles/signupPage.css';
-import loginImage from '../assets/loginbg.png';
 import { BiArrowFromRight } from 'react-icons/bi';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import loginImage from '../assets/loginbg.png';
 
 const SignupPage = () => {
   // State to manage form inputs
@@ -37,12 +36,12 @@ const SignupPage = () => {
 
   return (
     <div className="signup-page">
-      <div className='snav'>
-      <Link to="/">
-        <BiArrowFromRight size={24} color="#333" />
-      </Link>
-      <h2>Get Energy Easier</h2>
-    </div>
+      <div className="snav">
+        <Link to="/">
+          <BiArrowFromRight size={24} color="#333" />
+        </Link>
+        <h2>Get Energy Easier</h2>
+      </div>
       <hr />
       <img src={loginImage} alt="loginimage" style={{ width: 200 }} />
       <form onSubmit={handleSubmit} className="signup-form">
@@ -78,8 +77,8 @@ const SignupPage = () => {
             onChange={handleChange}
             required
           />
-          </div>
-          <div className="form-group">
+        </div>
+        <div className="form-group">
           <label htmlFor="password">Confirm Password</label>
           <input
             type="password"
@@ -97,7 +96,7 @@ const SignupPage = () => {
             <option value="community2">Community 2</option>
             <option value="community3">Community 3</option>
           </select>
-          
+
         </div>
         <button type="submit">Sign Up</button>
       </form>
