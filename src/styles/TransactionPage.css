@@ -1,0 +1,64 @@
+/* src/styles/TransactionPage.css */
+.transaction-page {
+  
+  font-family: Arial, sans-serif;
+}
+
+.transaction-header {
+  display: flex;
+  align-items: center;
+justify-content: space-between;
+padding: 0 0.4rem 0 0.2rem;
+border-bottom: 2px solid black;
+}
+
+.back-button {
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.user-selection {
+  margin: 0.5rem 1rem 0 1rem;
+}
+
+.user-selection select {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.transactions-table {
+  width: 100%;
+  min-width: 600px; /* Minimum width to prevent squishing */
+  border-collapse: collapse;
+}
+
+.transactions-table th,
+.transactions-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+}
+
+.transactions-table th {
+  background-color: #f2f2f2;
+}
+
+.transactions-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.transactions-table tr:hover {
+  background-color: #f1f1f1;
+}

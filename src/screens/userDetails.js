@@ -13,7 +13,9 @@ const UserDetail = () => {
 
       <div className="header">
       <h3>User Details<p>Community-A</p></h3>
+      <Link to ="/">
         <BiMenuAltRight size={38}/>
+        </Link>
       </div>
       <div className='newUser'>
       <BiUserPlus size={45}  />
