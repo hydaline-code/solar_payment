@@ -1,0 +1,71 @@
+.header {
+ padding: 0 0.5rem 0 0.5rem;
+}
+
+.newUser {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem 0 0.5rem;
+}
+
+h6 {
+  font-size: 14px;
+  position: relative;
+  top: -2rem;
+}
+
+.userdetail-card .userdetail {
+  border: solid 1px black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infos-user  {
+  font-size: 14px;
+  border: solid 1px black;
+  margin-right: 2rem;
+}
+
+.user-icon {
+  margin-left: 2rem;
+}
+
+.userdetail,
+.user-transaction,
+.alldetails {
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.alldetails {
+  position: relative;
+  top: -3rem;
+}
+
+.user-transaction {
+  background: #fff;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  text-decoration: underline;
+  margin-left: 0.2rem;
+}
+
+.contact-button {
+  max-width: 50%;
+  padding: 14px 20px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 6.3rem;
+}

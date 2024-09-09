@@ -8,6 +8,8 @@ import HomePage from './screens/HomePage';
 import AdminPage from './screens/adminMenu';
 import AddUser from './screens/addUsers';
 import AddConfirm from './screens/addConfirm';
+import UserDetail from './screens/userDetails';
+
 
 function App() {
   return (
@@ -20,8 +22,9 @@ function App() {
         <Route path="/SignupError" element={<SignupError />} />
         <Route path="/HomePage" element={<HomePage/>}/>
         <Route path="/AdminPage" element={<AdminPage/>}/>
-        <Route path="/" element={<AddUser/>}/>
+        <Route path="/addUsers" element={<AddUser/>}/>
         <Route path="/addConfirm" element={<AddConfirm/>}/>
+        <Route path="/" element={<UserDetail/>}/>
       </Routes>
     </Router>
   );
