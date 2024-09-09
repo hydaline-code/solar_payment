@@ -23,8 +23,9 @@ const HomePage = ()=>{
     <h2>Get Energy Easier</h2>
     <section className="intro-section">
         <img src={loginImage} alt="Login background" />
-
+    <Link to ="/AdminPage">
         <button className="get-started-btn">Get Started</button>
+        </Link>
       </section>
 
       <section className="stats">
@@ -58,7 +59,6 @@ const HomePage = ()=>{
       </section>
 
       <section className="active-users">
-      
       <div className="graph-placeholder-1">
       <h2>Active Users</h2>
         <PieChart chartData={activeUsersData} />
