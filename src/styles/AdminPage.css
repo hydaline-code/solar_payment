@@ -19,7 +19,6 @@
   margin-bottom: 20px;
   row-gap: 1.5rem;
   justify-content: space-between;
-  border: 1px solid red;
 }
 
 .search-bar input {
@@ -50,6 +49,7 @@
   border-collapse: collapse;
   margin-top: 20px;
   background-color: #f9f9f9;
+  border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -101,7 +101,8 @@
 }
 
 .table-users {
-  border: solid 1px black;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 0.5rem;
 }
 

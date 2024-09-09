@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { BiSearch, BiUser, BiEdit, BiArrowToRight, BiArrowToLef,BiMenuAltRight, BiArrowToLeft} from 'react-icons/bi';
+import { BiSearch, BiUser, BiEdit, BiArrowToRight, BiMenuAltRight, BiArrowToLeft } from 'react-icons/bi';
 import '../styles/AdminPage.css'; // Ensure you have proper styling
+import '../styles/HomePage.css';
+import HomeCharts from '../components/HomeCharts';
+import {overallData, transactionsData, activeUsersData} from  '../data/ChartData';
+import PieChart from "../components/PieChart";
 
 const users = [
   { name: 'Jean-Marc', contact: '695451245', meterNo: '12457869' },
@@ -91,8 +95,19 @@ const AdminPage = () => {
       </div>
     </div>
   
-    </div>
-    
+    <section className="transactions">
+    <div className="transaction-graph-placeholder">
+    <HomeCharts  title="Weekly - Transactions" chartData={transactionsData} />
+    </div> 
+  </section>
+
+  <section className="active-users">
+      <div className="graph-placeholder-1">
+      <h2>Active Users</h2>
+        <PieChart chartData={activeUsersData} />
+        </div>
+      </section>
+  </div>
   );
 };
 
