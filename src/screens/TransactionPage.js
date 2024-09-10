@@ -7,23 +7,43 @@ const TransactionPage = () => {
   
   const [selectedUser, setSelectedUser] = useState("Jean-Marc");
 
+  const usersData = {
+    "Jean-Marc": [
+      { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+      { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+      { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+      { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+      { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+      // Add more rows as needed
+    ],
+    Jacques: [
+      { transId: "0003", date: "22-03-01", meterNo: "245879635", amount: "1500 FCFA", tokenG: "245879gfhdf546" },
+      { transId: "0004", date: "22-03-02", meterNo: "245879635", amount: "2500 FCFA", tokenG: "245879gfhdf546" },
+      { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+    { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+    { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+    { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+      // Add more rows as needed
+    ],
+  };
+
   const handleUserChange = (event) => {
     setSelectedUser(event.target.value);
   };
 
-  const transactions = [
-    { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
-    { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
-    { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
-    { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
-    { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
-    { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
-    { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
-    { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
-    { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
-    { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
-    // Add more rows as needed
-  ];
+  // const transactions = [
+  //   { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+  //   { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+  //   { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+  //   { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+  //   { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+  //   { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+  //   { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+  //   { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+  //   { transId: "0001", date: "22-02-24", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+  //   { transId: "0002", date: "22-02-25", meterNo: "245879635", amount: "2000 FCFA", tokenG: "12457896gthsf546" },
+  //   // Add more rows as needed
+  // ];
 
   return (
     <div className="transaction-page">
@@ -53,7 +73,7 @@ const TransactionPage = () => {
             </tr>
           </thead>
           <tbody>
-            {transactions.map((transaction, index) => (
+            {usersData[selectedUser].map((transaction, index) => (
               <tr key={index}>
                 <td>{transaction.transId}</td>
                 <td>{transaction.date}</td>
@@ -65,16 +85,18 @@ const TransactionPage = () => {
           </tbody>
         </table>
       </div>
-
+<div className="loadtrans">
+ 
       <div className=" user-selection see-trans">
             <h4>See Transactions : </h4>
-        <select value={selectedUser} onChange={handleUserChange}>
+        <select className="className="filter-dropdown>
           <option value="">Monthly</option>
           <option value="Jacques">Weekly</option>
           {/* Add more users as needed */}
         </select>
-  
-
+      </div>
+      
+      <p>load graph here</p>
       </div>
     </div>
   );

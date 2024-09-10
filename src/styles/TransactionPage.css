@@ -62,3 +62,33 @@ border-bottom: 2px solid black;
 .transactions-table tr:hover {
   background-color: #f1f1f1;
 }
+/* src/styles/TransactionPage.css */
+.footer-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.contact-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #0056b3;
+}
+
+.filter-dropdown {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.loadtrans {
+  border: solid red 1px ;
+}
