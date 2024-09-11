@@ -1,0 +1,68 @@
+/* src/styles/MenuButton.css */
+
+/* Menu Toggle Button */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: right;
+}
+
+/* Sidebar Menu */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -150px;
+  width: 150px;
+  height: 100%;
+  background-color: #807f7f;
+  color: #fff;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding-top: 60px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  transition: transform 0.3s ease; /* Smooth transition for opening/closing */
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 15px 20px;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  background-color: #444;
+}
+
+
+.sidebar.open {
+  display: block; 
+  transform: translateX(0); /* Adjust for sliding in effect */
+}
+
+.close-menu {
+  background: #fff;
+  border: none;
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+  cursor: pointer;
+}
+

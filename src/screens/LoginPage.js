@@ -83,11 +83,13 @@ const LoginPage = () => {
           </p>
         </div>
         {error && <p className="error-message">{error}</p>}
-        
+
         <div className="logbtn">
+          <Link to ="/HomePage">
           <button type="submit" className="login-button">
             Login
           </button>
+          </Link>
           <p className="login-para">
             Don't have an account?{' '}
             <Link to="/signup">
