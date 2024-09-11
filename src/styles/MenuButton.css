@@ -51,7 +51,6 @@
   background-color: #444;
 }
 
-
 .sidebar.open {
   display: block; 
   transform: translateX(0); /* Adjust for sliding in effect */

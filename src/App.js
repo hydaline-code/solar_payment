@@ -8,8 +8,9 @@ import HomePage from './screens/HomePage';
 import AdminPage from './screens/adminMenu';
 import AddUser from './screens/addUsers';
 import AddConfirm from './screens/addConfirm';
-import UserDetail from './screens/userDetails';
 import TransactionPage from './screens/TransactionPage';
+import User from './screens/User';
+
 
 function App() {
   return (
@@ -24,8 +25,8 @@ function App() {
         <Route path="/AdminPage" element={<AdminPage/>} />
         <Route path="/addUsers" element={<AddUser/>} />
         <Route path="/addConfirm" element={<AddConfirm/>} />
-        <Route path="/userDetail" element={<UserDetail/>} />
         <Route path="/TransactionPage" element={<TransactionPage/>} />
+        <Route path="/User" element={<User />} />
       </Routes>
     </Router>
   );

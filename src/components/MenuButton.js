@@ -34,7 +34,10 @@ const MenuButton = () => {
             <Link to="/HomePage" onClick={closeMenu}>Home</Link>
           </li>
           <li>
-            <Link to="/settings" onClick={closeMenu}>Settings</Link>
+          <Link to="/User" onClick={closeMenu}>User</Link>
+          </li>
+          <li>
+            <Link to="/addUsers" onClick={closeMenu}>New User</Link>
           </li>
           <li>
             <Link to="/" onClick={closeMenu}>Logout</Link>

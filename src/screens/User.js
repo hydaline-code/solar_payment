@@ -1,21 +1,23 @@
+
 import React, { useState } from 'react';
 import { BiMenuAltRight,BiUserPlus,BiUser } from 'react-icons/bi';
-import '../styles/userDetail.css'
 import HomeCharts from '../components/HomeCharts';
 import { UsersData } from '../data/userData';
+import { Link } from 'react-router-dom';
+import '../styles/userSpec.css';
+import MenuButton from '../components/MenuButton'; 
 
 
+const User = () => {
 
-const UserDetail = () => {
 
   return (
     <div className="userDetail-container">
 
+
       <div className="header">
       <h3>User Details<p>Community-A</p></h3>
-      <Link to ="/">
-        <BiMenuAltRight size={38}/>
-        </Link>
+        <MenuButton />
       </div>
       <div className='newUser'>
       <BiUserPlus size={45}  />
@@ -38,15 +40,17 @@ const UserDetail = () => {
       <div className="user-transaction">
         <HomeCharts  title="Jean Marc- Statistics" chartData={UsersData} />
         </div>
-        
-        <h3>See All</h3>
+       <Link to="/TransactionPage"> 
+       <h3>See All</h3>
+       </Link>
+
        
     </div>
     <button type="submit" className="contact-button">
         Contact
       </button>
-    </div>
+      </div>
   );
 };
 
-export default UserDetail;
+export default User;

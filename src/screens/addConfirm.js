@@ -2,6 +2,7 @@
 import React from 'react';
 import { FiCheckCircle } from 'react-icons/fi'; // Import the success icon
 import '../styles/signupConfirm.css';
+import { Link } from 'react-router-dom';
 
 const addConfirm = () => (
   <div className="add-confirm">
@@ -9,9 +10,11 @@ const addConfirm = () => (
       <FiCheckCircle className="icon" size={80} color="green" style={{ marginBottom: '20px', marginTop: '10rem' }} />
       <h2>New user registered succesfully</h2>
     </div>
+    <Link to ="/User">
       <button type="submit" className="addconfirm-button">
         See details
       </button>
+      </Link>
   </div>
 );
 
