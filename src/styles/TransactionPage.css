@@ -92,3 +92,14 @@ border-bottom: 2px solid black;
 .loadtrans {
   border: solid red 1px ;
 }
+
+.load-more-button {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background-color: #838383;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
