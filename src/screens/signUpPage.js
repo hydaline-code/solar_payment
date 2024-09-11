@@ -1,21 +1,60 @@
 // src/screens/SignupPage.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/signupPage.css';
 import { BiArrowFromRight } from 'react-icons/bi';
 import { useNavigate, Link } from 'react-router-dom';
 import loginImage from '../assets/loginbg.png';
 
 const SignupPage = () => {
-  // State to manage form inputs
   const navigate = useNavigate();
 
+  // State to manage form inputs
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
-    commuity: '',
+    community: '',
   });
+
+  // State to handle errors and communities list
+  const [error, setError] = useState('');
+  const [communities, setCommunities] = useState([]);
+
+  // Simulate fetching communities from backend (replace with actual API call)
+  useEffect(() => {
+    // Simulating a backend fetch for community options
+    const fetchCommunities = async () => {
+      // Replace with your actual API call
+      const fetchedCommunities = [
+        { id: 'community1', name: 'Community 1' },
+        { id: 'community2', name: 'Community 2' },
+        { id: 'community3', name: 'Community 3' },
+      ];
+      setCommunities(fetchedCommunities);
+      // Set the first community as default if available
+      if (fetchedCommunities.length > 0) {
+        setFormData((prevData) => ({
+          ...prevData,
+          community: fetchedCommunities[0].id,
+        }));
+      }
+    };
+
+    fetchCommunities();
+  }, []);
+
+  // Email validation regex
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  // Password validation regex (min 8 characters, uppercase, lowercase, number, special character)
+  const validatePassword = (password) => {
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return regex.test(password);
+  };
 
   // Handle form input changes
   const handleChange = (e) => {
@@ -24,13 +63,36 @@ const SignupPage = () => {
       ...formData,
       [name]: value,
     });
+    setError(''); // Clear errors on input change
   };
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
+
+    // Validate email
+    if (!validateEmail(formData.email)) {
+      setError('Invalid email format.');
+      return;
+    }
+
+    // Validate password
+    if (!validatePassword(formData.password)) {
+      setError(
+        'Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.'
+      );
+      return;
+    }
+
+    // Confirm password match
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match.');
+      return;
+    }
+
+    // Submit form data if validations pass
     console.log('Form submitted', formData);
+    setError('');
     navigate('/signupconfirm');
   };
 
@@ -79,25 +141,35 @@ const SignupPage = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Confirm Password</label>
+          <label htmlFor="confirmPassword">Confirm Password</label>
           <input
             type="password"
-            id="password"
-            name="password"
-            value={formData.password}
+            id="confirmPassword"
+            name="confirmPassword"
+            value={formData.confirmPassword}
             onChange={handleChange}
             required
           />
         </div>
         <div className="form-group">
           <label htmlFor="community">Choose a community:</label>
-          <select id="community" name="community" value={formData.commuity} onChange={handleChange}>
-            <option value="community1">Community 1</option>
-            <option value="community2">Community 2</option>
-            <option value="community3">Community 3</option>
+          <select
+            id="community"
+            name="community"
+            value={formData.community}
+            onChange={handleChange}
+          >
+            {communities.map((community) => (
+              <option key={community.id} value={community.id}>
+                {community.name}
+              </option>
+            ))}
           </select>
-
         </div>
+
+        {/* Display error message if any */}
+        {error && <p className="error-message">{error}</p>}
+
         <button type="submit">Sign Up</button>
       </form>
     </div>

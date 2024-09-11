@@ -96,3 +96,11 @@ input {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.signup-page .error-message {
+  color: red;
+  font-size: 12px; 
+  margin: 6px 0; /* Space around the error message */
+  position: absolute; 
+  top: 28%;
+  text-decoration: none;
+}
