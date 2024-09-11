@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import LoginPage from './screens/LoginPage';
+import LoginPage from './screens/LoginPage';
 import SignupPage from './screens/signUpPage';
 import SignupConfirm from './screens/SignupConfirm';
 import SignupError from './screens/SigninErr';
@@ -16,7 +16,7 @@ function App() {
     <Router>
       <Routes>
         {/* Define routes for each page */}
-        {/* <Route path="/" element={<LoginPage />} /> */}
+        <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/SignupConfirm" element={<SignupConfirm />} />
         <Route path="/SignupError" element={<SignupError />} />
@@ -25,7 +25,7 @@ function App() {
         <Route path="/addUsers" element={<AddUser/>} />
         <Route path="/addConfirm" element={<AddConfirm/>} />
         <Route path="/userDetail" element={<UserDetail/>} />
-        <Route path="/" element={<TransactionPage/>} />
+        <Route path="/TransactionPage" element={<TransactionPage/>} />
       </Routes>
     </Router>
   );
